@@ -35,6 +35,3 @@ public class EmployeeConroller {
 		return service.getEmpById(empId);
 	}
 }
-
-
-//dwarka rajiv gandhi

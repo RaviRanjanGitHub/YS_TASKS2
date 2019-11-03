@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name =  "Employee")
@@ -18,9 +19,11 @@ public class EmployeeDto {
 	private int empId;
 	
 	@Column(name =  "empName",nullable = false)
+	@Pattern(regexp = "/^[a-z][a-z\\s]*$/", message ="Please Enter only Character")
 	private String empName;
 	
-	@Column(name =  "mobileNo", length = 10)
+	@Column(name =  "mobileNo", length = 10)   
+    @Pattern(regexp = "^[0-9]", message ="Please Enter only Number")
 	private long mobileNo;
 	
 	@Column(name =  "emailId")
